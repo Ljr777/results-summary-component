@@ -5,3 +5,16 @@
 * {
   box-sizing: border-box;
 }
+p {
+  @apply text-slate-200;
+}
+.bg-color {
+  background: linear-gradient(180deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+.bg-circle {
+  background: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}

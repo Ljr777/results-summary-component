@@ -16,46 +16,55 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <section className="flex flex-col justify-center items-center h-screen w-screen">
-          <div className="bg-indigo-500 text-center h-auto w-auto border-orange-300 px-8 py-2">
-            <h1 className="">Your Result</h1>
-            <h2 className="">Great</h2>
-            <h2>Great</h2>
-            <h3>
-              You scored higher than 65% of the people who have taken these
-              tests
-            </h3>
-          </div>
+        <div className="md:flex md:flex-col md:h-screen md:max-w-2xl md:mx-auto justify-center items-center">
+          <section className="flex flex-col items-center  md:flex-row md:justify-center md:shadow-md md:shadow-indigo-500/50 md:rounded-2xl md:overflow-hidden">
+            <div className="flex flex-col bg-color gap-5 px-8 py-2 content-center justify-center text-center rounded-b-3xl md:rounded-2xl overflow-hidden md:flex-1 h-full md:p-6">
+              <div className="flex flex-col items-center justify-center h-auto">
+                <p className="mt-2 font-bold text-[#c8c7ff]">Your Result</p>
+                <h1 className="mt-5 flex flex-col justify-center items-center bg-circle w-24 h-24 md:w-40 md:h-40 rounded-full">
+                  <span className="text-bold text-6xl text-white font-bold">
+                    76
+                  </span>{" "}
+                  <span className="inline-block text-[#c8c7ff]">of 100</span>
+                </h1>
+                <h2 className="text-white text-2xl font-bold">Great</h2>
+              </div>
+              <p className="text-[#c8c7ff]">
+                You scored higher than 65% of the people who have taken these
+                tests
+              </p>
+            </div>
 
-          <div className="flex flex-col space-y-2.5 place-content-center gap-y-2 justify-center">
-            <h3 className="mt-6">Summary</h3>
-            {items.map((rating, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-row justify-center items-center space-x-48 px-2 py-2 rounded h-16"
-                  style={{
-                    backgroundColor: `${rating.color}15`,
-                  }}
-                >
-                  <div className="flex flex-row justify-center items-center ">
-                    <Image src={rating.icon} width="20" height="20" />
-                    <h2 className="font-bold" style={{ color: rating.color }}>
-                      {rating.category}
-                    </h2>
+            <div className="flex flex-col place-content-center rounded-3xl gap-x-2 gap-y-2 justify-center md:flex-1 md:px-5 md:w-8">
+              <h3 className="mt-5 md:mt-0 font-bold">Summary</h3>
+              {items.map((rating, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-row justify-center items-center space-x-48 md:space-x-32 px-2 py-2 rounded h-16 md:h-12 md:text-sm"
+                    style={{
+                      backgroundColor: `${rating.color}15`,
+                    }}
+                  >
+                    <div className="flex flex-row justify-center items-center ">
+                      <Image src={rating.icon} width="20" height="20" />
+                      <h2 className="font-bold" style={{ color: rating.color }}>
+                        {rating.category}
+                      </h2>
+                    </div>
+                    <h2>{rating.score}/100</h2>
                   </div>
-                  <h2>{rating.score}</h2>
-                </div>
-              );
-            })}
-            <Link
-              href="github.com/Ljr777"
-              className="text-center bg-[#303b5a] py-2 rounded-3xl"
-            >
-              Continue
-            </Link>
-          </div>
-        </section>
+                );
+              })}
+              <Link
+                href="https://github.com/Ljr777"
+                className="text-center font-bold text-sm text-[#ebf1ff] bg-[#303b5a] py-2 rounded-3xl hover:bg-indigo-600 transition-all duration-200"
+              >
+                Continue
+              </Link>
+            </div>
+          </section>
+        </div>
       </main>
     </>
   );
